@@ -26,8 +26,7 @@
   <div *ngFor="let f of getFlights()" class="col-sm-4" style="padding:20px;">
     <flight-card
         [item]="f"
-        [selectedItem]="selectedFlight"
-        (selectedItemChange)="selectedFlight = $event">
+        [(selectedItem)]="selectedFlight">
 
       <a class="btn btn-default" href="#/flight/f.id">Edit</a>
     </flight-card>
