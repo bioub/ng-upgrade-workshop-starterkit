@@ -11,6 +11,15 @@ class FlightCardController {
         this.selectedItem = this.item;
         this.selectedItemChange(this.item);
     }
+
+    $onInit() {
+        console.log('FlightCardController $onInit called');
+    }
+
+    $onChanges(changes) {
+        console.log('FlightCardController $onChanges called');
+        console.log(changes);
+    }
 }
 
 export const FlightCardComponent : angular.IComponentOptions = {
