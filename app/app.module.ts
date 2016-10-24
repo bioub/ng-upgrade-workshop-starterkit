@@ -22,6 +22,7 @@ import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
 import {MigratedFlightSearchComponent} from "./flight-search/migrated-flight-search.component";
 import {MigratedPassengerService} from "./services/migrated-passenger.service";
+import {MigratedFlightEditComponent} from "./flight-edit/migrated-flight-edit.component";
 
 
 var app = angular.module('flight-app', ['ngMessages', 'ui.router', tabs]);
@@ -38,7 +39,6 @@ app.component('home', HomeComponent);
 app.component('passengerSearch', PassengerSearchComponent);
 app.component('passengerCard', PassengerCardComponent);
 app.component('app', AppComponent);
-app.component('flightEdit', FlightEditComponent);
 app.component('flightBooking', FlightBookingComponent);
 app.component('shoppingCard', ShoppingCardComponent);
 app.component('flightSearch', FlightSearchComponent);
@@ -57,6 +57,7 @@ export const upgradeAdapter = new UpgradeAdapter(forwardRef(() => AppModule));
     ],
     declarations: [
         MigratedFlightSearchComponent,
+        MigratedFlightEditComponent,
         upgradeAdapter.upgradeNg1Component('flightCard')
     ]
 })
@@ -66,5 +67,7 @@ class AppModule {
 upgradeAdapter.upgradeNg1Provider('flightService');
 upgradeAdapter.upgradeNg1Provider('bookingEventService');
 
-app.directive('migratedFlightSearch', <any>upgradeAdapter.downgradeNg2Component(MigratedFlightSearchComponent))
+
+app.directive('migratedFlightSearch', <any>upgradeAdapter.downgradeNg2Component(MigratedFlightSearchComponent));
+app.directive('flightEdit', <any>upgradeAdapter.downgradeNg2Component(MigratedFlightEditComponent));
 app.factory('passengerService', upgradeAdapter.downgradeNg2Provider(MigratedPassengerService));

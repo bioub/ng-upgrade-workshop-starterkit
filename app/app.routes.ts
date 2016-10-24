@@ -26,7 +26,12 @@ angular
         })
         .state('flightBooking.flightEdit', {
             url: '/flight/:id',
-            template: '<flight-edit></flight-edit>'
+            template: '<flight-edit [id]="$ctrl.id"></flight-edit>',
+            resolve: {
+                id: $stateParams => $stateParams.id
+            },
+            controllerAs: '$ctrl',
+            controller: function(id) { this.id = id; }
         });
 });
 
