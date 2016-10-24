@@ -3,14 +3,15 @@ import {Component, AfterContentInit, OnInit, Input} from "@angular/core";
 @Component({
     selector: 'tabs',
     template: `
-        <div style="background-color:lightblue; padding:20px;">
-            <span *ngFor="let tab of tabs" style="padding-right:20px;">
-                <a style="cursor:pointer" (click)="activate(tab)">{{tab.title}}</a>
+        <div>
+            <span *ngFor="let tab of tabs">
+                <a (click)="activate(tab)">{{tab.title}}</a>
             </span>
 
             <ng-content></ng-content>
         </div>
-    `
+    `,
+    styleUrls: ['./migrated-tab.css']
 })
 export class MigratedTabsComponent implements AfterContentInit {
 

@@ -1,0 +1,12 @@
+div {
+    background-color:lightblue;
+    padding:20px;
+}
+
+div span {
+    padding-right:20px;
+}
+
+div span a {
+    cursor:pointer;
+}
