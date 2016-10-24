@@ -2,7 +2,7 @@ import {Flight} from "../shared/flight";
 import {FlightService} from "../services/flight.service";
 import {BookingEventService} from "../services/booking-event.service";
 
-export class FlightSearchController {
+class FlightSearchController {
 
     public from: string = 'Hamburg';
     public to: string = 'Graz';
@@ -29,4 +29,7 @@ export class FlightSearchController {
     }
 }
 
-
+export const FlightSearchComponent: angular.IComponentOptions = {
+    controller: FlightSearchController,
+    templateUrl: './flight-search.html'
+};
