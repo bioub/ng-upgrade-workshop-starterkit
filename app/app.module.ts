@@ -23,6 +23,7 @@ import {FormsModule} from "@angular/forms";
 import {MigratedFlightSearchComponent} from "./flight-search/migrated-flight-search.component";
 import {MigratedPassengerService} from "./services/migrated-passenger.service";
 import {MigratedFlightEditComponent} from "./flight-edit/migrated-flight-edit.component";
+import {MigratedTabsModule} from "./tabs/migrated-tabs.module";
 
 
 var app = angular.module('flight-app', ['ngMessages', 'ui.router', tabs]);
@@ -50,7 +51,8 @@ export const upgradeAdapter = new UpgradeAdapter(forwardRef(() => AppModule));
     imports: [
         BrowserModule,
         HttpModule,
-        FormsModule
+        FormsModule,
+        MigratedTabsModule
     ],
     providers: [
         MigratedPassengerService
